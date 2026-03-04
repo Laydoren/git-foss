@@ -18,7 +18,11 @@ def test_addition_with_bug():
     print("Test BASIC ADDITIONS WITH BUG PASSED")
     # assert add_with_bug(6, 7) == 13 # Ты дурак?
 
+def test_addition_duplicated():
+    # is it real good test (relies on absence of + in add())
+    assert add(2, 3) == 2 + 3
 
 if __name__ == "__main__":
     test_addition()
     test_addition_with_bug()
+    test_addition_duplicated()
