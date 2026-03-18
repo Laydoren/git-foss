@@ -1,4 +1,4 @@
-.PHONY: create-structure
+.PHONY: create-structure install-dep install test-pytest
 
 create-structure:
 	mkdir -p src tests docs
@@ -6,3 +6,13 @@ create-structure:
 	touch docs/DOMAIN.md README.md .gitignore
 	touch setup.py requiremqnts
 
+install-dep:
+	pip install -r requiremqnts.txt
+
+install:
+	pip install -e
+
+test-pytest:
+	python3 -m pytest
+
+test: install-dep install test-pytest
