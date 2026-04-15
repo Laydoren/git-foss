@@ -4,8 +4,10 @@ from setuptools import(
 )
 
 setup(
-    name="ndfl",
+    name="ndfl2026-test",
     version="0.0.0",
+    long_description="Tax calculator",
+    long_description_content_type="text/markdown",
     package_dir={"":"src"},
     packages=find_packages(where="src")
 )
