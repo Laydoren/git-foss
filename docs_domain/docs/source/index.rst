@@ -1,20 +1,19 @@
 .. sales documentation master file, created by
-   sphinx-quickstart on Wed Apr 22 06:04:07 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+  sphinx-quickstart on Wed Apr 15 15:51:00 2026.
+  You can adapt this file completely to your liking, but it should at least
+  contain the root `toctree` directive.
 
-Welcome to sales's documentation!
-=================================
+sales documentation
+===================
+
+Add your content using ``reStructuredText`` syntax. See the
+`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
+documentation for details.
+This docs describe sales parsing lib
+
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+:maxdepth: 2
+:caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   QUICKSTART
