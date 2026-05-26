@@ -3,7 +3,7 @@
 Showing ...
 
 ## Author
-Polina Druzhinina
+Herman Geets
 
 ## Age
 18
