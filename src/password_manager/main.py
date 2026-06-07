@@ -1,12 +1,12 @@
-from src.vault import (
+from password_manager.generator import check_strength
+from password_manager.vault import (
+    EntryNotFoundError,
     add_entry,
-    list_entries,
-    get_entry,
     delete_entry,
     generate_and_add,
-    EntryNotFoundError,
+    get_entry,
+    list_entries,
 )
-from src.generator import check_strength
 
 
 def main() -> None:

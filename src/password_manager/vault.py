@@ -1,6 +1,6 @@
-from src.models import PasswordEntry
-from src.storage import load_entries, save_entries
-from src.generator import generate_password
+from password_manager.generator import check_strength, generate_password
+from password_manager.models import PasswordEntry
+from password_manager.storage import load_entries, save_entries
 
 
 class EntryNotFoundError(Exception):
