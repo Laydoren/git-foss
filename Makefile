@@ -30,3 +30,7 @@ format:
 
 lint:
 	$(PYTHON) -m black --check src tests scripts
+
+check: lint typecheck test check-requirements
+
+full-run: install check run
