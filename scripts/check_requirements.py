@@ -1,7 +1,11 @@
 import subprocess
 import sys
 
-result = subprocess.run([sys.executable, "-m", "pip_check_reqs.find_missing_reqs", "src"], capture_output=True, text=True)
+result = subprocess.run(
+    [sys.executable, "-m", "pip_check_reqs.find_missing_reqs", "src"],
+    capture_output=True,
+    text=True,
+)
 
 if result.stdout:
     print(result.stdout)

@@ -1,4 +1,11 @@
-from src.vault import add_entry, list_entries, get_entry, delete_entry, generate_and_add, EntryNotFoundError
+from src.vault import (
+    add_entry,
+    list_entries,
+    get_entry,
+    delete_entry,
+    generate_and_add,
+    EntryNotFoundError,
+)
 from src.generator import check_strength
 
 
@@ -36,7 +43,9 @@ def main() -> None:
             elif choice == "3":
                 entries = list_entries()
                 for i, e in enumerate(entries, start=1):
-                    print(f"{i}. {e.service} ({e.username}) — created {e.created_at[:10]}")
+                    print(
+                        f"{i}. {e.service} ({e.username}) — created {e.created_at[:10]}"
+                    )
 
             elif choice == "4":
                 service = input("Service name: ").strip()
