@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-
 from password_manager.models import PasswordEntry
 
 DATA_FILE = Path("data/vault.json")

@@ -1,7 +1,7 @@
 import pytest
 
-from src.generator import check_strength, generate_password
-from src.vault import (
+from password_manager.generator import check_strength, generate_password
+from password_manager.vault import (
     EntryNotFoundError,
     add_entry,
     delete_entry,
@@ -42,7 +42,7 @@ def test_check_strength_strong() -> None:
 
 
 def test_add_and_get_entry(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     add_entry("github", "user", "secret123")
     entry = get_entry("github")
     assert entry.service == "github"
@@ -51,20 +51,20 @@ def test_add_and_get_entry(tmp_path, monkeypatch) -> None:
 
 
 def test_get_entry_case_insensitive(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     add_entry("GitHub", "user", "secret123")
     entry = get_entry("github")
     assert entry.service == "GitHub"
 
 
 def test_get_entry_not_found(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     with pytest.raises(EntryNotFoundError):
         get_entry("nonexistent")
 
 
 def test_delete_entry(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     add_entry("github", "user", "secret123")
     delete_entry("github")
     with pytest.raises(EntryNotFoundError):
@@ -72,13 +72,13 @@ def test_delete_entry(tmp_path, monkeypatch) -> None:
 
 
 def test_delete_entry_not_found(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     with pytest.raises(EntryNotFoundError):
         delete_entry("nonexistent")
 
 
 def test_list_entries(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     add_entry("github", "user1", "pass1")
     add_entry("gitlab", "user2", "pass2")
     entries = list_entries()
@@ -88,13 +88,13 @@ def test_list_entries(tmp_path, monkeypatch) -> None:
 
 
 def test_list_entries_empty(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     with pytest.raises(EntryNotFoundError):
         list_entries()
 
 
 def test_generate_and_add(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("src.storage.DATA_FILE", tmp_path / "vault.json")
+    monkeypatch.setattr("password_manager.storage.DATA_FILE", tmp_path / "vault.json")
     password = generate_and_add("github", "user", length=20)
     assert len(password) == 20
     entry = get_entry("github")
