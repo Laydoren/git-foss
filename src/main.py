@@ -1,4 +1,4 @@
-from src.vault import (add_entry, list_entries, get_entry, delete_entry, generate_and_add, EntryNotFoundError)
+from src.vault import add_entry, list_entries, get_entry, delete_entry, generate_and_add, EntryNotFoundError
 from src.generator import check_strength
 
 
