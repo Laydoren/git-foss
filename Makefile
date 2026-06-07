@@ -24,3 +24,9 @@ typecheck:
 
 test:
 	$(PYTHON) -m pytest -v
+
+format:
+	$(PYTHON) -m black src tests scripts
+
+lint:
+	$(PYTHON) -m black --check src tests scripts
