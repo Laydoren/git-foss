@@ -15,15 +15,15 @@ make run
 
 ## Makefile-таргеты
 
-`make install` - Создаёт `.venv` и устанавливает зависимости
-`make run` - Запускает интерактивный CLI
-`make typecheck` - Запускает `mypy` - статическую проверку типов
-`make format` - Форматирует код через `black`
-`make lint` - Проверяет форматирование без изменений
-`make test` - Запускает тесты через `pytest`
-`make check-requirements` - Сравнивает импорты в `src/` с `requirements.txt`
-`make check` - Запускает `lint`, `typecheck`, `test`, `check-requirements`
-`make run-full` - Сначала запускает `install`, потом `check` и в конце `run`
+`make install` - Создаёт `.venv` и устанавливает зависимости  
+`make run` - Запускает интерактивный CLI  
+`make typecheck` - Запускает `mypy` - статическую проверку типов  
+`make format` - Форматирует код через `black`  
+`make lint` - Проверяет форматирование без изменений  
+`make test` - Запускает тесты через `pytest`  
+`make check-requirements` - Сравнивает импорты в `src/` с `requirements.txt`  
+`make check` - Запускает `lint`, `typecheck`, `test`, `check-requirements`  
+`make run-full` - Сначала запускает `install`, потом `check` и в конце `run`  
 
 ## Запуск без Make
 
