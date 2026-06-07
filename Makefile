@@ -18,3 +18,9 @@ run:
 
 check-requirements:
 	$(PYTHON) scripts/check_requirements.py
+
+typecheck:
+	$(PYTHON) -m mypy src tests
+
+test:
+	$(PYTHON) -m pytest -v
