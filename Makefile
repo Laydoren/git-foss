@@ -15,3 +15,6 @@ install:
 
 run:
 	$(PYTHON) -m src.main
+
+check-requirements:
+	$(PYTHON) scripts/check_requirements.py
